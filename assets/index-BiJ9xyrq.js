@@ -97,9 +97,9 @@ Error generating stack: `+c.message+`
     display: flex;
     flex-direction: column;
   }
-  /* Desktop: two equal columns */
+  /* Desktop: two equal columns, full viewport */
   @media (min-width: 860px) {
-    .intro { flex-direction: row; height: 100vh; }
+    .intro { flex-direction: row; height: 100vh; overflow: hidden; }
   }
 
   .intro-left {
@@ -114,18 +114,18 @@ Error generating stack: `+c.message+`
     overflow: hidden;
   }
   @media (min-width: 860px) {
-    .intro-left { flex: 0 0 50%; width: 50%; padding: 64px 72px; }
+    .intro-left { flex: 0 0 50%; width: 50%; padding: 64px 72px; height: 100vh; }
   }
 
   .intro-eyebrow {
     font-family: Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 20px;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: none;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 24px;
     border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding-bottom: 10px;
+    padding-bottom: 12px;
     display: inline-block;
   }
   .intro h1 {
@@ -218,9 +218,17 @@ Error generating stack: `+c.message+`
     flex-direction: column;
     overflow-y: auto;
     flex: 1;
+    min-height: 0;
   }
   @media (min-width: 860px) {
-    .intro-right { flex: 0 0 50%; width: 50%; border-left: 1px solid #d4d1c6; }
+    .intro-right {
+      flex: 1 1 0;
+      min-width: 0;
+      width: 50%;
+      height: 100vh;
+      overflow-y: auto;
+      border-left: 1px solid #d4d1c6;
+    }
   }
 
   /* Stats bar */
